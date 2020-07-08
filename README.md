@@ -1,6 +1,13 @@
 # NLP-HPO-datasets
 Repository aggregating HPO-labelled datasets for NLP development.
 
+## Table of Contents
+[HPO Gold Standardized Corpora](#GSC)
+
+[HPO Gold Standardized Corpora +](#GSC+) 
+
+<a name="GSC"/>
+
 ## HPO Gold Standardized Corpora (GSC)
 The HPO gold standard corpus consists of a collection of 228 manually annotated abstracts cited by the Online Mendelian Inheritance in Man (OMIM) database. All annotations are stored in stand-off tab based format in files carrying the PMIDs corresponding to the abstracts listed in the original corpus. The stand-off annotation format is: startOffset::endOffset [tab] HPO URI | original text span (for example [86::103] HP_0001792 | hypoplastic nails).
 
@@ -25,6 +32,8 @@ The original GSC contains inconsistencies that could bring confusion to the mach
   2. **Entity Meaning**. In some situations, annotated entities do not exactly match their meaning in the ontology, which can lead to some entities being misidentified. An example is the annotation of “calcium metabolism” (document 6882181 in the GSC) instead of “disturbance of calcium metabolism.” The entity “calcium metabolism” by itself does not have any meaning in the HPO because it does not correspond to any abnormality.
   3. **Nested Entities**. Nested entities are entities that are contained within other entities. In the GSC some of the entities that are nested inside another entity are annotated while other times they are not. An example of this occurs in the entity “skin and genital anomalies” (document 12219090 in the GSC) and “spine and rib anomalies” (document 9096761 in the GSC). The entity “spine and rib anomalies” is annotated in the GSC, along with the entity “rib anomalies.” However, the same is not true for the entity “skin and genital anomalies.” This entity is annotated in the GSC (accession number: HP_0000078) but the entity “genital anomalies,” which exists in the HPO, is not.
   4. **Superclass/Subclass Entities**. The final type of inconsistency found has to do with superclass/subclass entities. This is closely related to nested entities because it also involves the identification of entities inside other entities. It is possible that some annotators identify only the most specific class (the subclass) of a certain entity, while others try to identify all the possible classes. However, the GSC is not consistent with the annotation of these types of entities. An example of this occurs with the superclass entity “tumours” and the subclass entities “tumours of the nervous system” (document 2888021 in the GSC) and “intracranial tumours” (document 3134615 in the GSC). In the first case, the GSC annotates both “tumours” and “tumours of the nervous system” as entities. In the second case, only “intracranial tumours” is considered an entity.
+
+<a name="GSC+"/>
 
 ## HPO Gold Standardized Corpora Extended (GSC+)
 
