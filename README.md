@@ -2,9 +2,9 @@
 Repository aggregating HPO-labelled datasets for NLP development.
 
 ## Table of Contents
-[HPO Gold Standardized Corpora](#GSC)
+[Gold Standardized Corpora](#GSC)
 
-[HPO Gold Standardized Corpora +](#GSC+) 
+[Gold Standardized Corpora +](#GSC+) 
 
 <a name="GSC"/>
 
