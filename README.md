@@ -11,21 +11,19 @@ Repository aggregating HPO-labelled datasets for NLP development.
 ## HPO Gold Standardized Corpora (GSC)
 The HPO gold standard corpus consists of a collection of 228 manually annotated abstracts cited by the Online Mendelian Inheritance in Man (OMIM) database. All annotations are stored in stand-off tab based format in files carrying the PMIDs corresponding to the abstracts listed in the original corpus. The stand-off annotation format is: startOffset::endOffset [tab] HPO URI | original text span (for example [86::103] HP_0001792 | hypoplastic nails).
 
-Groza et al. (2015, https://academic.oup.com/database/article/doi/10.1093/database/bav005/2433137) analyzed it to compare NCBO Annotator, OBO Annotator and Bio-LarK CR. Lobo et al. (2017, https://www.hindawi.com/journals/bmri/2017/8565739/) created IHP.
+[Groza et al., 2015](https://academic.oup.com/database/article/doi/10.1093/database/bav005/2433137) analyzed it to compare NCBO Annotator, OBO Annotator and Bio-LarK CR. [Lobo et al. 2017](https://www.hindawi.com/journals/bmri/2017/8565739/) created IHP.
 
 | | Precision | Recall | F1 | Link |
 |-|-----------|--------|----|------|
-| NCBO Annotator | 0.54 | 0.39 | 0.45 | https://doi.org/10.1186/1471-2105-10-S9-S14 |
-| OBO Annotator  | 0.69 | 0.44 | 0.54 | https://doi.org/10.1093/database/bau045 |
-| Bio-LarK CR    | 0.65 | 0.49 | 0.56 | https://doi.org/10.1093/database/bav005 |
-| IHP            | 0.56 | 0.79 | 0.65 | https://doi.org/10.1155/2017/8565739 |
+| NCBO Annotator | 0.54 | 0.39 | 0.45 | [pub](https://doi.org/10.1186/1471-2105-10-S9-S14) |
+| OBO Annotator  | 0.69 | 0.44 | 0.54 | [pub](https://doi.org/10.1093/database/bau045) |
+| Bio-LarK CR    | 0.65 | 0.49 | 0.56 | [pub](https://doi.org/10.1093/database/bav005) |
+| IHP            | 0.56 | 0.79 | 0.65 | [pub](https://doi.org/10.1155/2017/8565739) |
 
-Link to data 1: https://data.monarchinitiative.org/hpo/hpo_corpus.tar.gz
-Link to data 2: http://www.bio-lark.org/hpo_res.html
+[Link to data](https://data.monarchinitiative.org/hpo/hpo_corpus.tar.gz)
+[License](https://hpo.jax.org/app/license)
 
-License: https://hpo.jax.org/app/license
-
-### Inconsistencies (Groza et al. 2015)
+### Inconsistencies ([Groza et al. 2015](https://doi.org/10.1155/2017/8565739))
 The original GSC contains inconsistencies that could bring confusion to the machine learning-based annotator. By inconsistency we mean similar entity mentions that were annotated differently in multiple locations of a given corpus. The inconsistencies found in the GSC can be divided into four different types: number of annotations, entity meaning, nested entities, and superclass/subclass entities. Some examples of these inconsistencies are presented below.
 
   1. **Number of Annotations**. The number of times an entity is identified in a document is inconsistent. For example, the entity “preauricular pits” (document 998578 in the GSC) is used three times during the text and is annotated all three times. In another situation, the entity “medulloblastoma” (document 19533801 in the GSC) is also used three times during the text but it is only annotated twice.
@@ -37,18 +35,18 @@ The original GSC contains inconsistencies that could bring confusion to the mach
 
 ## HPO Gold Standardized Corpora Extended (GSC+)
 
-Bio-LarK CR could not be evaluated on this dataset. Bio-LarK CR -measure was only 0.02 higher than OBO Annotator so it should be ok.
+Bio-LarK CR could not be evaluated on this dataset. Bio-LarK CR F-measure was only 0.02 higher than OBO Annotator so it should be ok.
 
 | | Precision | Recall | F-measure | Link |
 |-|-----------|--------|-----------|------|
-| NCBO Annotator | 0.688 | 0.455 | 0.548 | https://doi.org/10.1186/1471-2105-10-S9-S14 |
-| OBO Annotator | 0.769 | 0.344 | 0.475 | https://doi.org/10.1093/database/bau045 |
-| MER | 0.649 | 0.405 | 0.499 | https://www.researchgate.net/profile/Francisco_Couto/publication/316545534_MER_a_Minimal_Named-Entity_Recognition_Tagger_and_Annotation_Server/links/5903169f0f7e9bc0d588d788/MER-a-Minimal-Named-Entity-Recognition-Tagger-and-Annotation-Server.pdf |
-| IHP | 0.872 | 0.854 | 0.863 | https://doi.org/10.1155/2017/8565739 |
+| NCBO Annotator | 0.688 | 0.455 | 0.548 | [pub](https://doi.org/10.1186/1471-2105-10-S9-S14) |
+| OBO Annotator | 0.769 | 0.344 | 0.475 | [pub](https://doi.org/10.1093/database/bau045) |
+| MER | 0.649 | 0.405 | 0.499 | [pub](https://www.researchgate.net/profile/Francisco_Couto/publication/316545534_MER_a_Minimal_Named-Entity_Recognition_Tagger_and_Annotation_Server/links/5903169f0f7e9bc0d588d788/MER-a-Minimal-Named-Entity-Recognition-Tagger-and-Annotation-Server.pdf) |
+| IHP | 0.872 | 0.854 | 0.863 | [pub](https://doi.org/10.1155/2017/8565739) |
 
 ## Advantages over GSC
 
-Link to data: https://github.com/lasigeBioTM/IHP/blob/master/GSC+.rar
+[Link to data](https://github.com/lasigeBioTM/IHP/blob/master/GSC+.rar)
 
 IHP tries to identify all instances of HPO entities (normal, nested, and subclass/superclass entities), independently of the number of times they appear in the text. Having the correct number of times entities appear in a document can be useful for calculating important values such as the term frequency, which is used to determine the importance of a term in a document. Since IHP tries to annotate as many entities as possible, it will identify a lot of entities that are not in the GSC. This, of course, will cause a decrease in precision and therefore in the overall performance. Table 4 presents the results from the conducted test to evaluate the potential of IHP in case these inconsistencies were not an issue. Since the test removes from the results all instances of false positives that exist either in the GSC annotations or in the HPO database (by exact matching), there is an increase in precision. The results show that IHP has the potential of achieving an -measure of about 0.82, corresponding to an increase of 0.18 in comparison to the achieved results. This increase suggests that almost a fifth of the annotator’s performance can be affected by inconsistencies.
 
@@ -61,3 +59,27 @@ Another issue of these annotators is the choice of identifying subclass entities
 The reason IHP had a better performance than the other annotators on the GSC+ is that it tries to annotate all instances of HPO entities. We can also see this by comparison of the results in the GSC and the GSC+. There is an increase in precision because all the entities that were previously seen as false positives (and that exist in the HPO database) are now considered true positives.
 
 
+<a name="MIMIC-III"/>
+
+## MIMIC-III phenotypic annotations
+MIMIC collects over 40000 clinical notes from admissions to critical care units of hte Beth Israel Deaconess Medical Center between 2001 and 2012. [Moseley et al. (2020)](https://physionet.org/content/phenotype-annotations-mimic/1.20.03/) annotated 15 common phenotypes related to patients re-admitted to the unit. Only 15 phenotypes were annotated (extracted from the publication above):
+
+| Phenotype | Description |
+|-----------|-------------|
+| Advanced Cancer | Cancers with very high mortality (pancreatic, esophageal, stomach/gastric, biliary, anaplastic) |
+| Advanced Heart Disease | Ejection fraction (EF) less than 30%, severe cardiomyopathy, severe aortic stenosis, any mention of heart transplant (considered for, set to receive, | denied).|
+| Advanced Lung Disease | Pulmonary Function Test (PFT) results of Forced Expiratory Volume (FEV1) less than 50% of normal, or Forced Vital Capacity (FVC) less than 70%. Severe | chronic obstructive pulmonary disease (COPD), which may be indicated by Gold Stage III-IV. Severe interstitial lung disease (ILD). |
+| Alcohol Abuse | Recent alcohol abuse history which is an active problem at the time of admission, whether it is the primary cause of admission or not. |
+| Chronic Neurological Dystrophies | Chronic central nervous system (CNS) or spinal cord diseases, including: multiple sclerosis (MS), amyotrophic lateral sclerosis (ALS), | muscular dystrophies, myasthenia gravis, Parkinson's Disease, epilepsy, stroke and cerebrovascular accident (CVA) with residual deficits, and various neuromuscular diseases or | dystrophies. |
+| Chronic Pain Fibromyalgia | Any etiology of chronic pain (including fibromyalgia) requiring long-term opioid/narcotic medication to control. |
+| Dementia | Alzheimer's and other forms of dementia mentioned in the text. |
+| Depression | Diagnosis of depression, treatment of depression, presentation to the ICU with symptoms of depression including acts of self-harm or suicide. |
+| Developmental Delay | Includes congenital, genetic and idiopathic disabilities. |
+| Non Adherence | Temporary or permanent discontinuation of a treatment, including pharmaceuticals or appointments, without consulting a physician prior to doing so. This | includes skipping dialysis appointments or leaving the hospital against medical advice. A patient who sees a physician to discuss adverse events associated with a medication | may or may not constitute non-adherence depending on whether or not the treatment was ceased without the physician's consultation. |
+| None | True when no indication is apparent to the annotator. |
+| Obesity | Any mention of obesity as a consideration in the healthcare encounter. Abdominal obesity is not sufficient. |
+| Other Substance Abuse | Intravenous drug abuse, illicit drug use, accidental overdose of psychoactive or narcotic medications. Remote use of marijuana is not sufficient. |
+| Schizophrenia and other Psychiatric Disorders | Psychiatric disorders in DSM-5 classification, including schizophrenia, bipolar and anxiety disorders. Does not include | depression. |
+| Unsure | Indicates ambiguity with regard to one or several of the other indications (including "None") on the part of the note annotator. |
+
+**TODO:** As they are, mappid to HPO is required.
