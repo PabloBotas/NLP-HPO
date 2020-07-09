@@ -6,6 +6,8 @@ Repository aggregating HPO-labelled datasets for NLP development.
 
 [Gold Standardized Corpora +](#GSC+) 
 
+[MIMIC-III](#MIMIC-III) 
+
 <a name="GSC"/>
 
 ## HPO Gold Standardized Corpora (GSC)
@@ -21,6 +23,7 @@ The HPO gold standard corpus consists of a collection of 228 manually annotated 
 | IHP            | 0.56 | 0.79 | 0.65 | [pub](https://doi.org/10.1155/2017/8565739) |
 
 [Link to data](https://data.monarchinitiative.org/hpo/hpo_corpus.tar.gz)
+
 [License](https://hpo.jax.org/app/license)
 
 ### Inconsistencies ([Groza et al. 2015](https://doi.org/10.1155/2017/8565739))
